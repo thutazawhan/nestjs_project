@@ -3,20 +3,23 @@ import { AppService } from './app.service';
 
 @Controller() // localhost:3000
 export class AppController {
+  getHello(): any {
+    throw new Error('Method not implemented.');
+  }
+
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  productFunc(){
+    return this.appService.getJson();
   }
 
-  @Get('/showname') //localhost:3000/showname
-  getName(): string{
-    return this.appService.getName();
-  }
-
-  @Get('/showjson')
+  @Get('/getjson')
   getJson(){
     return this.appService.getJson();
   }
+
+
+
+  
 }
